@@ -2,6 +2,7 @@ version: "2"
 services:
 
   db:
+    container_name: pennarguear-db
     image: mysql:5.7.31
     restart: always
     environment:
@@ -17,6 +18,7 @@ services:
       - ./db:/var/lib/mysql
 
   wordpress:
+    container_name: pennarguear-web
     depends_on:
      - db
     build:
